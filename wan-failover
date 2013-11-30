@@ -54,6 +54,7 @@
     /log warning "Switched to primary internet connection"
 # Remove all connections
     /ip firewall connection tracking set enabled=no
+    :delay 5s
     /ip firewall connection tracking set enabled=yes
 };
 :if (!$primaryOk && $backupOk && ($primaryDistance <= $backupDistance)) do={
@@ -63,5 +64,6 @@
     /log error "Switched to backup internet connection"
 # Remove all connections
     /ip firewall connection tracking set enabled=no
+    :delay 5s
     /ip firewall connection tracking set enabled=yes
 };
