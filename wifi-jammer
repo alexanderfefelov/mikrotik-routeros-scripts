@@ -8,12 +8,13 @@
 :local TARGETSSID "SomeSSID"
 :local WLANIFACE 0
 :local SCANDATFILENAME "scan.dat"
+:local SCANDURATION 5
 
 #-------------------------------------------------------------------------------
 # Jammer
 #-------------------------------------------------------------------------------
 /interface wireless reset-configuration $WLANIFACE
-/interface wireless scan $WLANIFACE duration=5 save-file=$SCANDATFILENAME
+/interface wireless scan $WLANIFACE duration=$SCANDURATION save-file=$SCANDATFILENAME
 :local text [/file get $SCANDATFILENAME contents]
 :local textLen [:len $text]
 :local startPos 0
