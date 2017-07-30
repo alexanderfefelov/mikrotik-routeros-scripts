@@ -13,7 +13,7 @@
 # Jammer
 #-------------------------------------------------------------------------------
 /interface wireless reset-configuration $WLANIFACE
-/interface wireless scan 0 duration=5 save-file=$SCANDATFILENAME
+/interface wireless scan $WLANIFACE duration=5 save-file=$SCANDATFILENAME
 :local text [/file get $SCANDATFILENAME contents]
 :local textLen [:len $text]
 :local startPos 0
