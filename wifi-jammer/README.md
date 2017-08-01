@@ -1,5 +1,13 @@
 # MikroTik RouterOS Wi-Fi Jammer
 
+Wi-Fi Jammer jams some target access point (identified by SSID) by creating rogue access point with the same SSID/frequency/MAC address.
+
+## Disclaimer
+
+This project is a proof of concept for experimental and educational purposes.
+
+Please don't abuse this project as it may be illegal in your country.
+
 ## Installation
 
 Revise the Settings section of `wifi-jammer.rsc`.
