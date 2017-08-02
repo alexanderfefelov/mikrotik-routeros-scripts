@@ -36,3 +36,4 @@
   }
 } while ($startPos < $textLen)
 /file remove $SCANDATFILENAME
+/system scheduler set "wifi-jammer" interval=($SCANDURATION + 1 + [:pick [/system clock get time] 7])
