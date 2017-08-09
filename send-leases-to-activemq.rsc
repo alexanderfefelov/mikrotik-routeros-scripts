@@ -17,5 +17,6 @@
 :local url "http://$ACTIVEMQHOST:$ACTIVEMQPORT/api/message/$ACTIVEMQTOPIC"
 :local date [/system clock get date]
 :local time [/system clock get time]
-:local message "{\"date\":\"$date\",\"time\":\"$time\",\"bound\":$leaseBound,\"serverName\":\"$leaseServerName\",\"mac\":\"$leaseActMAC\",\"ip\":\"$leaseActIP\"}"
+:local systemIdentity [/system identity get name]
+:local message "{\"date\":\"$date\",\"time\":\"$time\",\"systemIdentity\":\"$systemIdentity\",\"bound\":$leaseBound,\"serverName\":\"$leaseServerName\",\"mac\":\"$leaseActMAC\",\"ip\":\"$leaseActIP\"}"
 /tool fetch url="$url" http-method="post" user="$ACTIVEMQUSER" password="$ACTIVEMQPASSWORD" http-data="body=$message" keep-result="no"
