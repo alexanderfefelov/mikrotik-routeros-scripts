@@ -1,0 +1,91 @@
+#-------------------------------------------------------------------------------
+# MikroTik RouterOS Ringtone: Tetris
+#
+# Created with RTTTL to MikroTik RouterOS Script Generator
+# https://arktronic.github.io/mikrotik-scripts/rtttl.html
+#-------------------------------------------------------------------------------
+
+:beep frequency=1319 length=375ms;
+:delay 385ms;
+:beep frequency=988 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=1175 length=188ms;
+:delay 198ms;
+:beep frequency=1319 length=94ms;
+:delay 104ms;
+:beep frequency=1175 length=94ms;
+:delay 104ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=988 length=188ms;
+:delay 198ms;
+:beep frequency=880 length=375ms;
+:delay 385ms;
+:beep frequency=880 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=1319 length=375ms;
+:delay 385ms;
+:beep frequency=1175 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=988 length=375ms;
+:delay 385ms;
+:beep frequency=988 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=1175 length=375ms;
+:delay 385ms;
+:beep frequency=1319 length=375ms;
+:delay 385ms;
+:beep frequency=1047 length=375ms;
+:delay 385ms;
+:beep frequency=880 length=375ms;
+:delay 385ms;
+:beep frequency=880 length=750ms;
+:delay 760ms;
+:delay 188ms;
+
+:beep frequency=1175 length=375ms;
+:delay 385ms;
+:beep frequency=1397 length=188ms;
+:delay 198ms;
+:beep frequency=1760 length=375ms;
+:delay 385ms;
+:beep frequency=1568 length=188ms;
+:delay 198ms;
+:beep frequency=1397 length=188ms;
+:delay 198ms;
+:beep frequency=1319 length=375ms;
+:delay 385ms;
+:beep frequency=1319 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=1319 length=375ms;
+:delay 385ms;
+:beep frequency=1175 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=988 length=375ms;
+:delay 385ms;
+:beep frequency=988 length=188ms;
+:delay 198ms;
+:beep frequency=1047 length=188ms;
+:delay 198ms;
+:beep frequency=1175 length=375ms;
+:delay 385ms;
+:beep frequency=1319 length=375ms;
+:delay 385ms;
+:beep frequency=1047 length=375ms;
+:delay 385ms;
+:beep frequency=880 length=375ms;
+:delay 385ms;
+:beep frequency=880 length=375ms;
+:delay 385ms;
