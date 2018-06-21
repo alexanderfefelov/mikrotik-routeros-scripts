@@ -1,3 +1,3 @@
 # check-api
 
-This script check API availabity.
+This script checks RouterOS API connectivity and credentials.
