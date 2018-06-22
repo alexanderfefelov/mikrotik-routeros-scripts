@@ -70,7 +70,12 @@ def main():
                     cmd = line.strip()
                     if (len(cmd) > 0 and not line.startswith('#')):
                         print('# {0}'.format(cmd), file = results_out_f)
-                        result = api(cmd = cmd)
+                        splitted = cmd.split(' ', 1)
+                        command = splitted[0]
+                        arguments = dict()
+                        if (len(splitted) == 2):
+                            arguments = json.loads(splitted[1])
+                        result = api(cmd = command, **arguments)
                         print(json.dumps(result), file = results_out_f)
                 api.close()
                 logging.info('%s done', host)

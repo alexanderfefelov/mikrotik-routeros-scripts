@@ -1,3 +1,6 @@
 # This is a comment
 
 /system/resource/print
+
+# Command with parameters
+/ip/service/set {".id": "*0", "disabled": "yes"}
