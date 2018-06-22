@@ -37,6 +37,7 @@ def main():
 
     ssh_client = paramiko.SSHClient()
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    logging.getLogger("paramiko").setLevel(logging.WARNING)
 
     boxes = []
     with open(boxes_csv, 'rb') as f:
@@ -68,7 +69,8 @@ def main():
                         print('# {0}'.format(cmd), file = results_out_f)
                         stdin, stdout, stderr = ssh_client.exec_command(cmd)
                         result = stdout.read() + stderr.read()
-                        print(result, file = results_out_f)
+                        if (len(result) > 0):
+                            print(result, file = results_out_f)
                 ssh_client.close()
                 logging.info('%s done', host)
             except:
