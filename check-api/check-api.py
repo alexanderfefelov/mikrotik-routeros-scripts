@@ -11,6 +11,7 @@ import os
 import os.path
 import sys
 
+
 def main():
     home = os.path.dirname(os.path.abspath(__file__))
     os.chdir(home)
@@ -54,9 +55,9 @@ def main():
                     try:
                         api = connect(host = host, username = u, password = p, timeout = timeout)
                         identity = api(cmd = '/system/identity/print')[0]['name']
+                        api.close()
                         success_out_writer.writerow((host, u, p, identity))
                         logging.info("Success")
-                        api.close()
                         break
                     except:
                         exc_type, exc_value, exc_traceback = sys.exc_info()
@@ -73,7 +74,6 @@ def main():
             if (processed % 50 == 0):
                 logging.info('%d boxes processed', processed)
         logging.info('Total %d boxes processed', processed)
-
 
 
 if __name__ == '__main__':
