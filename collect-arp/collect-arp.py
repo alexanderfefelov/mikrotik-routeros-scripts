@@ -36,7 +36,7 @@ def main():
         password = box['password']
 
         try:
-            logging.info("Processing %s", host)
+            logging.info('Processing %s', host)
             api = connect(host = host, username = username, password = password, timeout = timeout)
             entries = api(cmd = '/ip/arp/print')
             api.close()
@@ -46,7 +46,7 @@ def main():
             with gzip.open(file_path, 'wb') as file:
                 for obj in data:
                     file.write(' '.join(obj) + '\n')
-            logging.info("%s done", host)
+            logging.info('%s done', host)
         except:
             exc_type, exc_value, exc_traceback = sys.exc_info()
             logging.error(exc_value)

@@ -1,0 +1,4 @@
+host,username,password
+192.168.10.1,admin,password
+192.168.11.1,admin,password
+192.168.12.1,admin,
