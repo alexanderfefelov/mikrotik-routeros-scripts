@@ -2,5 +2,5 @@
 
 /system/resource/print
 
-# Command with parameters
+# Command with parameters as JSON string
 /ip/service/set {".id": "*0", "disabled": "yes"}
