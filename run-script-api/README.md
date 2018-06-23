@@ -1,6 +1,6 @@
 # run-script-api
 
-This program runs RouterOS script on a bunch of routers via API.
+This program runs RouterOS script on a bunch of routers via [API](https://wiki.mikrotik.com/wiki/Manual:API).
 
 ## How to use
 

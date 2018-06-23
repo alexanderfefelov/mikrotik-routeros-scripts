@@ -85,7 +85,7 @@ def main():
             processed += 1
             if (processed % 50 == 0):
                 logging.info('%d boxes processed', processed)
-        logging.info('%d boxes processed', processed)
+        logging.info('Total %d box(es) processed', processed)
 
 
 if __name__ == '__main__':
