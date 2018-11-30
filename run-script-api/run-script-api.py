@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 from datetime import datetime
-from librouteros import connect # https://github.com/luqasz/librouteros
+from librouteros import connect  # https://github.com/luqasz/librouteros
 import ConfigParser
 import csv
 import gzip
@@ -14,7 +14,7 @@ import os.path
 import sys
 
 
-def setup_encoding(): # https://stackoverflow.com/a/40346898
+def setup_encoding():  # https://stackoverflow.com/a/40346898
     reload(sys)
     sys.setdefaultencoding('latin-1')
 
@@ -62,25 +62,25 @@ def main():
             username = box['username']
             password = box['password']
 
-            print('# -----[ {0} ]-----'.format(host), file = results_out_f)
+            print('# -----[ {0} ]-----'.format(host), file=results_out_f)
             try:
                 logging.info('Processing %s', host)
-                api = connect(host = host, username = username, password = password, timeout = timeout)
+                api = connect(host=host, username=username, password=password, timeout=timeout)
                 for line in script:
                     cmd = line.strip()
                     if (len(cmd) > 0 and not line.startswith('#')):
-                        print('# {0}'.format(cmd), file = results_out_f)
+                        print('# {0}'.format(cmd), file=results_out_f)
                         splitted = cmd.split(' ', 1)
                         command = splitted[0]
                         arguments = dict()
                         if (len(splitted) == 2):
                             arguments = json.loads(splitted[1])
-                        result = api(cmd = command, **arguments)
-                        print(json.dumps(result), file = results_out_f)
+                        result = api(cmd=command, **arguments)
+                        print(json.dumps(result), file=results_out_f)
                 api.close()
                 logging.info('%s done', host)
             except:
-                exc_type, exc_value, exc_traceback = sys.exc_info()
+                _, exc_value, _ = sys.exc_info()
                 logging.error(exc_value)
             processed += 1
             if (processed % 50 == 0):

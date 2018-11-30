@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from datetime import datetime
-from librouteros import connect # https://github.com/luqasz/librouteros
+from librouteros import connect  # https://github.com/luqasz/librouteros
 import ConfigParser
 import csv
 import json
@@ -53,14 +53,14 @@ def main():
             for u in usernames:
                 for p in passwords:
                     try:
-                        api = connect(host = host, username = u, password = p, timeout = timeout)
-                        identity = api(cmd = '/system/identity/print')[0]['name']
+                        api = connect(host=host, username=u, password=p, timeout=timeout)
+                        identity = api(cmd='/system/identity/print')[0]['name']
                         api.close()
                         success_out_writer.writerow((host, u, p, identity))
                         logging.info("Success")
                         break
                     except:
-                        exc_type, exc_value, exc_traceback = sys.exc_info()
+                        _, exc_value, _ = sys.exc_info()
                         logging.error(exc_value)
                         if (str(exc_value) != "cannot log in"):
                             break

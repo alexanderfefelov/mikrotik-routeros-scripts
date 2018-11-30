@@ -59,22 +59,22 @@ def main():
             username = box['username']
             password = box['password']
 
-            print('# -----[ {0} ]-----'.format(host), file = results_out_f)
+            print('# -----[ {0} ]-----'.format(host), file=results_out_f)
             try:
                 logging.info('Processing %s', host)
-                ssh_client.connect(hostname = host, username = username, password = password, timeout = timeout)
+                ssh_client.connect(hostname=host, username=username, password=password, timeout=timeout)
                 for line in script:
                     cmd = line.strip()
                     if (len(cmd) > 0 and not line.startswith('#')):
-                        print('# {0}'.format(cmd), file = results_out_f)
-                        stdin, stdout, stderr = ssh_client.exec_command(cmd)
+                        print('# {0}'.format(cmd), file=results_out_f)
+                        _, stdout, stderr = ssh_client.exec_command(cmd)
                         result = stdout.read() + stderr.read()
                         if (len(result) > 0):
-                            print(result, file = results_out_f)
+                            print(result, file=results_out_f)
                 ssh_client.close()
                 logging.info('%s done', host)
             except:
-                exc_type, exc_value, exc_traceback = sys.exc_info()
+                _, exc_value, _ = sys.exc_info()
                 logging.error(exc_value)
             processed += 1
             if (processed % 50 == 0):

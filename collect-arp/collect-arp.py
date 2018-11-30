@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from datetime import datetime
-from librouteros import connect # https://github.com/luqasz/librouteros
+from librouteros import connect  # https://github.com/luqasz/librouteros
 import ConfigParser
 import gzip
 import json
@@ -11,7 +11,7 @@ import os
 import sys
 
 
-def setup_encoding(): # https://stackoverflow.com/a/40346898
+def setup_encoding():  # https://stackoverflow.com/a/40346898
     reload(sys)
     sys.setdefaultencoding('latin-1')
 
@@ -37,8 +37,8 @@ def main():
 
         try:
             logging.info('Processing %s', host)
-            api = connect(host = host, username = username, password = password, timeout = timeout)
-            entries = api(cmd = '/ip/arp/print')
+            api = connect(host=host, username=username, password=password, timeout=timeout)
+            entries = api(cmd='/ip/arp/print')
             api.close()
             data = set([(entry['mac-address'], entry['interface']) for entry in entries if 'mac-address' in entry])
             file_name = datetime.now().strftime('%Y%m%d%H%M%S') + '-' + host + '.gz'
@@ -48,7 +48,7 @@ def main():
                     file.write(' '.join(obj) + '\n')
             logging.info('%s done', host)
         except:
-            exc_type, exc_value, exc_traceback = sys.exc_info()
+            _, exc_value, _ = sys.exc_info()
             logging.error(exc_value)
 
 
